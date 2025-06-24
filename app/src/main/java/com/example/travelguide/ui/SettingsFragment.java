@@ -1,4 +1,4 @@
-package com.example.travelguide;
+package com.example.travelguide.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.travelguide.account.LoginActivity;
+import com.example.travelguide.R;
+import com.example.travelguide.account.RegisterActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

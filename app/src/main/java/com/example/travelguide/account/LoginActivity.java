@@ -1,4 +1,4 @@
-package com.example.travelguide;
+package com.example.travelguide.account;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -7,21 +7,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.travelguide.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class RegisterActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EditText emailEditText;
     private EditText passwordEditText;
-    private EditText confirmPasswordEditText;
-    private Button registerButton;
-    private TextView loginTextView;
+    private Button loginButton;
+    private TextView registerTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -32,24 +33,22 @@ public class RegisterActivity extends AppCompatActivity {
     private void initViews() {
         emailEditText = findViewById(R.id.email_edit_text);
         passwordEditText = findViewById(R.id.password_edit_text);
-        confirmPasswordEditText = findViewById(R.id.confirm_password_edit_text);
-        registerButton = findViewById(R.id.register_button);
-        loginTextView = findViewById(R.id.login_text_view);
+        loginButton = findViewById(R.id.login_button);
+        registerTextView = findViewById(R.id.register_text_view);
     }
 
     private void setupClickListeners() {
-        registerButton.setOnClickListener(v -> registerUser());
+        loginButton.setOnClickListener(v -> loginUser());
 
-        loginTextView.setOnClickListener(v -> {
+        registerTextView.setOnClickListener(v -> {
             finish();
-            // 可以启动 LoginActivity
+            // 可以启动 RegisterActivity
         });
     }
 
-    private void registerUser() {
+    private void loginUser() {
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
-        String confirmPassword = confirmPasswordEditText.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
             emailEditText.setError("請輸入郵箱");
@@ -61,28 +60,18 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        if (password.length() < 6) {
-            passwordEditText.setError("密碼至少需要6個字符");
-            return;
-        }
+        // 禁用登录按钮防止重复点击
+        loginButton.setEnabled(false);
 
-        if (!password.equals(confirmPassword)) {
-            confirmPasswordEditText.setError("密碼確認不匹配");
-            return;
-        }
-
-        // 禁用注册按钮防止重复点击
-        registerButton.setEnabled(false);
-
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
-                    registerButton.setEnabled(true);
+                    loginButton.setEnabled(true);
 
                     if (task.isSuccessful()) {
-                        Toast.makeText(RegisterActivity.this, "註冊成功", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "登錄成功", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
-                        Toast.makeText(RegisterActivity.this, "註冊失敗: " +
+                        Toast.makeText(LoginActivity.this, "登錄失敗: " +
                                 task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });

@@ -1,26 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
+    <!-- 地图区域 -->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 顶部搜索栏容器 -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="8dp"
+        android:alpha="0.95">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@color/white">
+
+            <!-- 搜索栏 -->
+            <SearchView
+                android:id="@+id/search_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:queryHint="搜索景點..."
+                android:iconifiedByDefault="false"
+                android:background="@android:color/transparent" />
+
+            <!-- 语音搜索按钮 -->
+            <ImageButton
+                android:id="@+id/voice_button"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_mic"
+                android:contentDescription="語音搜索"
+                android:padding="12dp"
+                android:layout_gravity="center_vertical" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- 我的位置按钮 -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/my_location_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/explore_title"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/black" />
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_my_location"
+        android:contentDescription="我的位置"
+        app:backgroundTint="@color/white"
+        app:tint="@color/purple_500"
+        app:elevation="8dp"
+        app:fabSize="normal" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="探索页面内容区域"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/gray" />
+    <!-- 底部景点卡片滑动区域 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/card_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_height"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="80dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:clipToPadding="false" />
 
-</LinearLayout>
+</FrameLayout>

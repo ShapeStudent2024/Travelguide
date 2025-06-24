@@ -1,4 +1,4 @@
-package com.example.travelguide;
+package com.example.travelguide.attraction;
 
 public class Attraction {
     private int imageResId;

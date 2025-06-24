@@ -1,4 +1,4 @@
-package com.example.travelguide;
+package com.example.travelguide.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.travelguide.attraction.Attraction;
+import com.example.travelguide.attraction.AttractionAdapter;
+import com.example.travelguide.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
