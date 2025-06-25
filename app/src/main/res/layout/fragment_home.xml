@@ -16,11 +16,15 @@
         android:padding="16dp"
         android:background="@color/white"
         android:gravity="center" />
+    <com.example.travelguide.weather.widget.WeatherCardView
+        android:id="@+id/weather_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="8dp" />
 
 </LinearLayout>

@@ -96,7 +96,7 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
     }
 
     private void setupSearchView() {
-        searchView.setQueryHint("搜索景點...");
+        searchView.setQueryHint("Search attractions...");
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -192,19 +192,19 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
                                 // 添加当前位置标记
                                 currentLocationMarker = googleMap.addMarker(new MarkerOptions()
                                         .position(currentLocation)
-                                        .title("您的位置")
+                                        .title("Your Location")
                                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
-                                Toast.makeText(getContext(), "已定位到您的當前位置", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Your current location has been located", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(getContext(), "無法獲取當前位置，請檢查GPS設置", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Unable to get current location, please check GPS settings", Toast.LENGTH_SHORT).show();
                         }
                     }
                 })
                 .addOnFailureListener(e -> {
                     myLocationButton.setEnabled(true);
-                    Toast.makeText(getContext(), "定位失敗：" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Positioning failed：" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -214,12 +214,12 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,
                 Locale.getDefault());
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "請說出要搜索的景點...");
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Please tell me what you want to search for...");
 
         try {
             startActivityForResult(intent, REQUEST_SPEECH_INPUT);
         } catch (Exception e) {
-            Toast.makeText(getContext(), "您的設備不支持語音輸入", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Your device does not support voice input", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -245,7 +245,7 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     startVoiceInput();
                 } else {
-                    Toast.makeText(getContext(), "需要麥克風權限才能使用語音搜索", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Microphone permission is required to use voice search", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
@@ -253,7 +253,7 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     getCurrentLocation();
                 } else {
-                    Toast.makeText(getContext(), "需要位置權限才能獲取當前位置", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Location permission is required to obtain current location", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
@@ -298,7 +298,7 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
         attractions.add(new AttractionLocation(
                 "中環半山扶手電梯", "Central-Mid-Levels Escalators",
                 new LatLng(22.2838450, 114.1549680),
-                "世界最長的戶外有蓋手扶電梯系統",
+                "The world's longest outdoor covered escalator system",
                 4.2f, "1.2km", R.drawable.escalator_placeholder,
                 AttractionLocation.Type.TRANSPORTATION
         ));
@@ -306,7 +306,7 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
         attractions.add(new AttractionLocation(
                 "山頂纜車", "The Peak Tram",
                 new LatLng(22.2776830, 114.1591870),
-                "香港著名的纜車系統，前往太平山頂",
+                "Hong Kong's famous cable car system, heading to the top of Victoria Peak",
                 4.5f, "2.8km", R.drawable.peak_tram_placeholder,
                 AttractionLocation.Type.TRANSPORTATION
         ));
@@ -314,7 +314,7 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
         attractions.add(new AttractionLocation(
                 "星光大道", "Avenue of Stars HK",
                 new LatLng(22.2930040, 114.1741480),
-                "紀念香港電影業的海濱長廊",
+                "A waterfront promenade commemorating the Hong Kong film industry",
                 4.0f, "0.8km", R.drawable.avenue_stars_placeholder,
                 AttractionLocation.Type.SIGHTSEEING
         ));
@@ -322,7 +322,7 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
         attractions.add(new AttractionLocation(
                 "香港迪士尼樂園", "Hong Kong Disneyland",
                 new LatLng(22.3129670, 114.0412820),
-                "亞洲第二座迪士尼主題樂園",
+                "The second Disney theme park in Asia",
                 4.6f, "15.2km", R.drawable.hong_kong_disneyland,
                 AttractionLocation.Type.THEME_PARK
         ));
@@ -330,7 +330,7 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
         attractions.add(new AttractionLocation(
                 "石板街", "Stone Slab Street",
                 new LatLng(22.2823670, 114.1549300),
-                "香港僅存的石板街道",
+                "The only remaining cobblestone street in Hong Kong",
                 3.8f, "1.0km", R.drawable.stone_street_placeholder,
                 AttractionLocation.Type.SIGHTSEEING
         ));
@@ -338,7 +338,7 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
         attractions.add(new AttractionLocation(
                 "蘭桂坊", "Lan Kwai Fong",
                 new LatLng(22.2810680, 114.1554790),
-                "香港著名的夜生活區域",
+                "Hong Kong's famous nightlife area",
                 4.1f, "0.9km", R.drawable.lan_kwai_fong_placeholder,
                 AttractionLocation.Type.ENTERTAINMENT
         ));
@@ -463,7 +463,7 @@ public class ExploreFragment extends Fragment implements OnMapReadyCallback {
         // TODO: 实现添加到行程计划的逻辑
         if (getContext() != null) {
             Toast.makeText(getContext(),
-                    "已添加 " + attraction.getChineseName() + " 到行程計劃",
+                    "Added " + attraction.getChineseName() + " to trip plan",
                     Toast.LENGTH_SHORT).show();
         }
     }

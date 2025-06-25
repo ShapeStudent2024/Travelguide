@@ -52,9 +52,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadAttractionData() {
-        attractionList.add(new Attraction(R.drawable.hong_kong_disneyland, "香港迪士尼樂園"));
-        attractionList.add(new Attraction(R.drawable.ocean_park, "香港海洋公園"));
-        attractionList.add(new Attraction(R.drawable.victoria_peak, "太平山頂"));
+        attractionList.add(new Attraction(R.drawable.hong_kong_disneyland, "Hong Kong Disneyland"));
+        attractionList.add(new Attraction(R.drawable.ocean_park, "Ocean Park Hong Kong"));
+        attractionList.add(new Attraction(R.drawable.victoria_peak, "Victoria Peak"));
 
         adapter.notifyDataSetChanged();
     }

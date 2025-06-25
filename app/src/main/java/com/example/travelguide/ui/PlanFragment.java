@@ -87,7 +87,7 @@ public class PlanFragment extends Fragment {
 
     private void onPostClick(Post post) {
         // 点击贴文，显示详情（暂时用Toast代替详情页面）
-        Toast.makeText(getContext(), "点击了贴文: " + post.getTitle(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Clicked on the post: " + post.getTitle(), Toast.LENGTH_SHORT).show();
         // TODO: 实现PostDetailActivity后取消注释下面的代码
         // Intent intent = new Intent(getActivity(), PostDetailActivity.class);
         // intent.putExtra("post_id", post.getId());
@@ -100,11 +100,11 @@ public class PlanFragment extends Fragment {
     }
 
     private void showPostOptionsDialog(Post post) {
-        String[] options = {"编辑", "删除"};
+        String[] options = {"edit", "delete"};
 
         androidx.appcompat.app.AlertDialog.Builder builder =
                 new androidx.appcompat.app.AlertDialog.Builder(requireContext());
-        builder.setTitle("选择操作")
+        builder.setTitle("Select an action")
                 .setItems(options, (dialog, which) -> {
                     switch (which) {
                         case 0: // 编辑
@@ -127,13 +127,13 @@ public class PlanFragment extends Fragment {
     private void deletePost(Post post) {
         androidx.appcompat.app.AlertDialog.Builder builder =
                 new androidx.appcompat.app.AlertDialog.Builder(requireContext());
-        builder.setTitle("确认删除")
-                .setMessage("确定要删除这个贴文吗？")
-                .setPositiveButton("删除", (dialog, which) -> {
+        builder.setTitle("Confirm Delete")
+                .setMessage("Are you sure you want to delete this post?？")
+                .setPositiveButton("Delete", (dialog, which) -> {
                     postViewModel.deletePost(post);
-                    Toast.makeText(getContext(), "贴文已删除", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Post has been deleted", Toast.LENGTH_SHORT).show();
                 })
-                .setNegativeButton("取消", null)
+                .setNegativeButton("Cancel", null)
                 .show();
     }
 }

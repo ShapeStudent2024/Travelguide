@@ -54,22 +54,22 @@ public class RegisterActivity extends AppCompatActivity {
         String confirmPassword = confirmPasswordEditText.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
-            emailEditText.setError("請輸入郵箱");
+            emailEditText.setError("Please enter your email address");
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
-            passwordEditText.setError("請輸入密碼");
+            passwordEditText.setError("Please enter your password");
             return;
         }
 
         if (password.length() < 6) {
-            passwordEditText.setError("密碼至少需要6個字符");
+            passwordEditText.setError("The password must be at least 6 characters");
             return;
         }
 
         if (!password.equals(confirmPassword)) {
-            confirmPasswordEditText.setError("密碼確認不匹配");
+            confirmPasswordEditText.setError("Password confirmation does not match");
             return;
         }
 
@@ -81,10 +81,10 @@ public class RegisterActivity extends AppCompatActivity {
                     registerButton.setEnabled(true);
 
                     if (task.isSuccessful()) {
-                        Toast.makeText(RegisterActivity.this, "註冊成功", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Successfully registered", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
-                        Toast.makeText(RegisterActivity.this, "註冊失敗: " +
+                        Toast.makeText(RegisterActivity.this, "Registration failed: " +
                                 task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });

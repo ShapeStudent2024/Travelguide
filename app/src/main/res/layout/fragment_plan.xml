@@ -41,7 +41,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:src="@drawable/ic_add"
-        android:contentDescription="添加贴文"
+        android:contentDescription="Add Post"
         app:backgroundTint="@color/purple_500" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

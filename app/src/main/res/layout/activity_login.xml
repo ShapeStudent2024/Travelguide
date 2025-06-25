@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="登錄"
+        android:text="Login"
         android:textSize="32sp"
         android:textStyle="bold"
         android:textColor="@color/black"
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:hint="郵箱"
+        android:hint="Email"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:hint="密碼"
+        android:hint="Password"
         app:passwordToggleEnabled="true"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
@@ -53,7 +53,7 @@
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="登錄"
+        android:text="Login"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginBottom="24dp"
@@ -63,7 +63,7 @@
         android:id="@+id/register_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="還沒有帳戶？點擊註冊"
+        android:text="Don't have an account? Click here to register"
         android:textSize="14sp"
         android:textColor="@color/purple_500"
         android:layout_gravity="center"

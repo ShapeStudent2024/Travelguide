@@ -35,6 +35,7 @@ android {
 dependencies {
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
     annotationProcessor("androidx.room:room-compiler:2.5.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation(libs.firebase.auth)
     implementation(platform(libs.firebase.bom))
     implementation(libs.appcompat)

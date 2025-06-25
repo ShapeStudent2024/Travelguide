@@ -30,7 +30,7 @@
             android:layout_height="0dp"
             android:layout_weight="0.3"
             android:gravity="center"
-            android:text="景点标题"
+            android:text="Attraction Title"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/black"

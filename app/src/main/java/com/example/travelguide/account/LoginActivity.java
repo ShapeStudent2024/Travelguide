@@ -51,12 +51,12 @@ public class LoginActivity extends AppCompatActivity {
         String password = passwordEditText.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
-            emailEditText.setError("請輸入郵箱");
+            emailEditText.setError("Please enter your email address");
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
-            passwordEditText.setError("請輸入密碼");
+            passwordEditText.setError("Please enter your password");
             return;
         }
 
@@ -68,10 +68,10 @@ public class LoginActivity extends AppCompatActivity {
                     loginButton.setEnabled(true);
 
                     if (task.isSuccessful()) {
-                        Toast.makeText(LoginActivity.this, "登錄成功", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
-                        Toast.makeText(LoginActivity.this, "登錄失敗: " +
+                        Toast.makeText(LoginActivity.this, "Login failed: " +
                                 task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });

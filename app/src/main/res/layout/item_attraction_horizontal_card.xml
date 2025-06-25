@@ -45,7 +45,7 @@
                     android:id="@+id/attraction_chinese_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="香港迪士尼樂園"
+                    android:text="Hong Kong Disneyland"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
@@ -106,7 +106,7 @@
                 android:id="@+id/add_to_plan_button"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
-                android:text="加入行程"
+                android:text="Add to itinerary"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:backgroundTint="@color/purple_500" />

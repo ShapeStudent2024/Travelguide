@@ -21,7 +21,7 @@
             android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="取消"
+            android:text="Cancel"
             android:textColor="@color/gray"
             android:background="?attr/selectableItemBackground"
             style="@style/Widget.Material3.Button.TextButton" />
@@ -30,7 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="新增貼文"
+            android:text="Add a post"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -40,7 +40,7 @@
             android:id="@+id/btn_publish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="发布"
+            android:text="Add a post"
             android:textColor="@color/white"
             android:backgroundTint="@color/purple_500"
             style="@style/Widget.Material3.Button" />
@@ -62,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:hint="標題"
+                android:hint="Title"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -88,7 +88,7 @@
                     android:layout_weight="1"
                     android:layout_marginEnd="8dp"
                     android:src="@drawable/ic_image"
-                    android:contentDescription="添加图片"
+                    android:contentDescription="Add a picture"
                     android:background="@drawable/button_outline"
                     android:scaleType="centerInside" />
 
@@ -99,7 +99,7 @@
                     android:layout_weight="1"
                     android:layout_marginHorizontal="4dp"
                     android:src="@drawable/ic_camera"
-                    android:contentDescription="拍照"
+                    android:contentDescription="Photograph"
                     android:background="@drawable/button_outline"
                     android:scaleType="centerInside" />
 
@@ -110,7 +110,7 @@
                     android:layout_weight="1"
                     android:layout_marginStart="8dp"
                     android:src="@drawable/ic_location"
-                    android:contentDescription="位置"
+                    android:contentDescription="Location"
                     android:background="@drawable/button_outline"
                     android:scaleType="centerInside" />
 
@@ -128,7 +128,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="內容"
+                android:hint="Content"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText

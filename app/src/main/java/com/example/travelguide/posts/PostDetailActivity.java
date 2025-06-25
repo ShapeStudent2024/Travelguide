@@ -51,12 +51,12 @@ public class PostDetailActivity extends AppCompatActivity {
         textLocation = findViewById(R.id.text_location);
         recyclerViewImages = findViewById(R.id.recycler_view_images);
 
-        dateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH:mm", Locale.getDefault());
+        dateFormat = new SimpleDateFormat("yyyyMMdd HH:mm", Locale.getDefault());
 
         // 设置返回按钮
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle("贴文详情");
+            getSupportActionBar().setTitle("Post Details");
         }
     }
 

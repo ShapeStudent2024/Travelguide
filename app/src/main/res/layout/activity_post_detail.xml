@@ -16,7 +16,7 @@
             android:id="@+id/text_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="贴文标题"
+            android:text="Post title"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -33,7 +33,7 @@
                 android:id="@+id/text_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2025年6月23日 15:30"
+                android:text="June 23, 2025 15:30"
                 android:textSize="14sp"
                 android:textColor="@color/gray"
                 android:layout_marginBottom="4dp" />
@@ -42,7 +42,7 @@
                 android:id="@+id/text_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="📍 香港迪士尼樂園"
+                android:text="📍 Hong Kong Disneyland"
                 android:textSize="14sp"
                 android:textColor="@color/gray"
                 android:visibility="gone" />
@@ -62,7 +62,7 @@
             android:id="@+id/text_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="贴文内容"
+            android:text="Post content"
             android:textSize="16sp"
             android:textColor="@color/black"
             android:lineSpacingExtra="4dp" />
