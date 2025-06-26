@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class WeatherService {
 
-    private static final String API_KEY = "38d629ec151e6cec155a8c50d0b4dca9";
+    private static final String API_KEY = "key";
     private static final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
     private Context context;
